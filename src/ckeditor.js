@@ -35,12 +35,14 @@ import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar.js';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation.js';
 import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline.js';
+import Mention from '@ckeditor/ckeditor5-mention/src/mention.js';
+import Attach from "./plugins/attach.plugin";
 
-class Editor extends ClassicEditorBase {
-}
+class Editor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
 Editor.builtinPlugins = [
+  Attach,
   Alignment,
   BlockQuote,
   Bold,
@@ -60,6 +62,7 @@ Editor.builtinPlugins = [
   Italic,
   Link,
   List,
+  Mention,
   Paragraph,
   PasteFromOffice,
   RemoveFormat,
@@ -106,7 +109,8 @@ Editor.defaultConfig = {
       'blockQuote',
       'insertTable',
       '|',
-      'removeFormat'
+      'removeFormat',
+      'attach'
     ]
   },
   language: 'en',
